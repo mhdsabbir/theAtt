@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 // imbr , imbrs , imbrr       équivalent de la ligne du dessous
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Accueil from './pages/Accueil';
 import Projets from './pages/Projets';
@@ -22,7 +22,7 @@ function App() {
     <Router>
       <main>
         <NavBar/>
-            <Switch>
+            <Routes>
               {routes.map(({path, Component})=>(
                 <Route key={path} exact path={path}>
                   {()=>(
@@ -32,7 +32,7 @@ function App() {
                   )}
                 </Route>
               ))}
-          </Switch>
+          </Routes>
       </main>
     </Router>
   );
